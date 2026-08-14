@@ -1,0 +1,37 @@
+schema_version = 1
+
+[weights]
+cache = "models/huggingface"
+
+[models.hunyuan3d]
+display_name = "Hunyuan3D 2.1"
+repository = "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1.git"
+destination = "external/Hunyuan3D-2.1"
+environment_variable = "HUNYUAN3D_HOME"
+python_version = "3.10"
+recursive = false
+providers = ["shape.hunyuan3d", "texture.hunyuan3d"]
+weight_repositories = ["tencent/Hunyuan3D-2.1"]
+notes = "Shape fits roughly 10 GB VRAM; PBR paint needs substantially more memory."
+
+[models.trellis]
+display_name = "TRELLIS"
+repository = "https://github.com/microsoft/TRELLIS.git"
+destination = "external/TRELLIS"
+environment_variable = "TRELLIS_HOME"
+python_version = "3.10"
+recursive = true
+providers = ["shape.trellis"]
+weight_repositories = ["microsoft/TRELLIS-image-large"]
+notes = "Official setup targets Linux and NVIDIA CUDA with at least 16 GB VRAM."
+
+[models.unirig]
+display_name = "UniRig"
+repository = "https://github.com/VAST-AI-Research/UniRig.git"
+destination = "external/UniRig"
+environment_variable = "UNIRIG_HOME"
+python_version = "3.11"
+recursive = false
+providers = ["rig.unirig"]
+weight_repositories = ["VAST-AI/UniRig"]
+notes = "Official inference requires a CUDA GPU; checkpoints may also download on first use."

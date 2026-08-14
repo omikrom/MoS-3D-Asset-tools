@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://soma-assets.local/schemas/asset.schema.json",
+  "title": "MoS Asset Specification",
+  "type": "object",
+  "required": ["schema_version", "asset", "source", "render"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "asset": {
+      "type": "object",
+      "required": ["id", "kind"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{1,63}$"},
+        "kind": {
+          "enum": ["character", "monster", "weapon", "armour", "equipment", "prop", "building", "environment", "projectile", "effect", "blood"]
+        },
+        "display_name": {"type": "string"},
+        "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "depends_on": {
+          "oneOf": [
+            {"type": "string"},
+            {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": {"enum": ["image", "text", "model", "blend", "procedural", "frames"]},
+        "path": {"type": "string"},
+        "prompt": {"type": "string"},
+        "frame_size": {
+          "type": "array",
+          "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "directions": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}
+      }
+    },
+    "geometry": {"type": "object"},
+    "rig": {"type": "object"},
+    "attachment": {"type": "object"},
+    "render": {
+      "type": "object",
+      "required": ["directions"],
+      "properties": {
+        "profile": {"type": "string"},
+        "directions": {"enum": [1, 4, 8, 16]},
+        "passes": {"type": "array", "items": {"enum": ["color", "normal", "depth", "emission", "mask", "shadow"]}}
+      }
+    },
+    "sprite": {"type": "object"},
+    "animations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "fps", "frames"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{1,63}$"},
+          "fps": {"type": "number", "exclusiveMinimum": 0},
+          "frames": {"type": "integer", "minimum": 1},
+          "loop": {"type": "boolean"},
+          "legacy_slot": {"type": "integer", "minimum": 0, "maximum": 18}
+        }
+      }
+    }
+  }
+}

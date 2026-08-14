@@ -1,0 +1,12 @@
+id = "monster"
+directions = 8
+direction_order = ["south", "south_west", "west", "north_west", "north", "north_east", "east", "south_east"]
+camera_elevation_degrees = 35.264
+orthographic_scale = 3.5
+frame_size = [512, 512]
+resolution_percentage = 150
+transparent = true
+engine = "BLENDER_EEVEE_NEXT"
+passes = ["color", "normal", "depth", "emission", "mask", "shadow"]
+atlas_max_size = 8192
+pivot = [256, 416]

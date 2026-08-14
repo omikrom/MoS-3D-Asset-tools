@@ -1,0 +1,162 @@
+id = "soma_humanoid_full"
+rig_profile = "soma_humanoid_v1"
+
+[[clips]]
+id = "combat_idle_standard"
+source = "library/animations/humanoid/combat_idle_standard.glb"
+legacy_slot = 0
+fps = 8
+frames = 8
+loop = true
+
+[[clips]]
+id = "combat_idle_two_handed"
+source = "library/animations/humanoid/combat_idle_two_handed.glb"
+legacy_slot = 1
+fps = 8
+frames = 8
+loop = true
+
+[[clips]]
+id = "combat_idle_polearm"
+source = "library/animations/humanoid/combat_idle_polearm.glb"
+legacy_slot = 2
+fps = 8
+frames = 8
+loop = true
+
+[[clips]]
+id = "crossbow_action"
+source = "library/animations/humanoid/crossbow_action.glb"
+legacy_slot = 3
+fps = 12
+frames = 10
+loop = false
+
+[[clips]]
+id = "walk_standard"
+source = "library/animations/humanoid/walk_standard.glb"
+legacy_slot = 4
+fps = 12
+frames = 8
+loop = true
+
+[[clips]]
+id = "walk_two_handed"
+source = "library/animations/humanoid/walk_two_handed.glb"
+legacy_slot = 5
+fps = 12
+frames = 8
+loop = true
+
+[[clips]]
+id = "walk_polearm"
+source = "library/animations/humanoid/walk_polearm.glb"
+legacy_slot = 6
+fps = 12
+frames = 8
+loop = true
+
+[[clips]]
+id = "attack_unarmed"
+source = "library/animations/humanoid/attack_unarmed.glb"
+legacy_slot = 7
+fps = 12
+frames = 10
+loop = false
+events = [{ frame = 6, id = "damage" }]
+
+[[clips]]
+id = "attack_one_handed_or_wand"
+source = "library/animations/humanoid/attack_one_handed.glb"
+legacy_slot = 8
+fps = 12
+frames = 10
+loop = false
+events = [{ frame = 6, id = "damage" }]
+
+[[clips]]
+id = "attack_two_handed"
+source = "library/animations/humanoid/attack_two_handed.glb"
+legacy_slot = 9
+fps = 12
+frames = 12
+loop = false
+events = [{ frame = 8, id = "damage" }]
+
+[[clips]]
+id = "attack_spear"
+source = "library/animations/humanoid/attack_spear.glb"
+legacy_slot = 10
+fps = 12
+frames = 10
+loop = false
+events = [{ frame = 7, id = "damage" }]
+
+[[clips]]
+id = "attack_bow"
+source = "library/animations/humanoid/attack_bow.glb"
+legacy_slot = 11
+fps = 12
+frames = 12
+loop = false
+events = [{ frame = 8, id = "release_projectile" }]
+
+[[clips]]
+id = "attack_axe"
+source = "library/animations/humanoid/attack_axe.glb"
+legacy_slot = 12
+fps = 12
+frames = 12
+loop = false
+events = [{ frame = 8, id = "damage" }]
+
+[[clips]]
+id = "hit_reaction"
+source = "library/animations/humanoid/hit_reaction.glb"
+legacy_slot = 13
+fps = 12
+frames = 6
+loop = false
+
+[[clips]]
+id = "cast"
+source = "library/animations/humanoid/cast.glb"
+legacy_slot = 14
+fps = 12
+frames = 10
+loop = false
+events = [{ frame = 6, id = "release_magic" }]
+
+[[clips]]
+id = "die"
+source = "library/animations/humanoid/die.glb"
+legacy_slot = 15
+fps = 10
+frames = 12
+loop = false
+
+[[clips]]
+id = "run"
+source = "library/animations/humanoid/run.glb"
+legacy_slot = 16
+fps = 14
+frames = 8
+loop = true
+
+[[clips]]
+id = "attack_dual_sword"
+source = "library/animations/humanoid/attack_dual_sword.glb"
+legacy_slot = 17
+fps = 14
+frames = 12
+loop = false
+events = [{ frame = 6, id = "damage_1" }, { frame = 9, id = "damage_2" }]
+
+[[clips]]
+id = "peaceful_idle"
+source = "library/animations/humanoid/peaceful_idle.glb"
+legacy_slot = 18
+fps = 8
+frames = 8
+loop = true

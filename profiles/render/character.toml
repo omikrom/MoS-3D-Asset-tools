@@ -1,0 +1,13 @@
+id = "character"
+directions = 8
+direction_order = ["south", "south_west", "west", "north_west", "north", "north_east", "east", "south_east"]
+camera_elevation_degrees = 35.264
+camera_focal_length_mm = 70.0
+orthographic_scale = 2.45
+frame_size = [384, 384]
+resolution_percentage = 200
+transparent = true
+engine = "BLENDER_EEVEE_NEXT"
+passes = ["color", "normal", "depth", "emission", "mask", "shadow"]
+atlas_max_size = 8192
+pivot = [192, 304]

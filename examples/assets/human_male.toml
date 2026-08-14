@@ -1,0 +1,101 @@
+schema_version = 1
+
+[asset]
+id = "human_male"
+kind = "character"
+display_name = "Human male base"
+tags = ["human", "player", "modular"]
+
+[source]
+mode = "image"
+path = "../inputs/human_male_front.png"
+prompt = "Athletic fantasy human male in an A-pose, neutral underwear, realistic anatomy, clean silhouette"
+
+[geometry]
+provider = "hunyuan3d"
+target = "deformable_character"
+height_metres = 1.80
+material = "pbr"
+keep_high_resolution_source = true
+
+[texture]
+enabled = true
+provider = "hunyuan3d"
+resolution = 2048
+material = "pbr"
+
+[rig]
+enabled = true
+provider = "unirig"
+profile = "soma_humanoid_v1"
+bind_pose = "a_pose"
+
+[render]
+profile = "character"
+directions = 8
+layer = "body"
+passes = ["color", "normal", "depth", "emission", "mask", "shadow"]
+
+[sprite]
+pivot = [192, 304]
+shared_canvas = "soma_humanoid_v1"
+trim = false
+
+[[animations]]
+id = "peaceful_idle"
+source = "../../library/animations/humanoid/peaceful_idle.glb"
+legacy_slot = 18
+fps = 8
+frames = 8
+loop = true
+
+[[animations]]
+id = "combat_idle_standard"
+source = "../../library/animations/humanoid/combat_idle_standard.glb"
+legacy_slot = 0
+fps = 8
+frames = 8
+loop = true
+
+[[animations]]
+id = "walk_standard"
+source = "../../library/animations/humanoid/walk_standard.glb"
+legacy_slot = 4
+fps = 12
+frames = 8
+loop = true
+root_motion = false
+
+[[animations]]
+id = "run"
+source = "../../library/animations/humanoid/run.glb"
+legacy_slot = 16
+fps = 14
+frames = 8
+loop = true
+root_motion = false
+
+[[animations]]
+id = "hit_reaction"
+source = "../../library/animations/humanoid/hit_reaction.glb"
+legacy_slot = 13
+fps = 12
+frames = 6
+loop = false
+
+[[animations]]
+id = "cast"
+source = "../../library/animations/humanoid/cast.glb"
+legacy_slot = 14
+fps = 12
+frames = 10
+loop = false
+events = [{ frame = 6, id = "release_magic" }]
+
+[[animations]]
+id = "die"
+source = "../../library/animations/humanoid/die.glb"
+legacy_slot = 15
+fps = 10
+frames = 12
+loop = false

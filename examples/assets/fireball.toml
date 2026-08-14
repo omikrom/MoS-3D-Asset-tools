@@ -1,0 +1,45 @@
+schema_version = 1
+
+[asset]
+id = "fireball"
+kind = "projectile"
+display_name = "Fireball"
+tags = ["magic", "fire", "projectile"]
+
+[source]
+mode = "procedural"
+prompt = "A dense orange-white magical fireball with licking flame and ember trail"
+
+[geometry]
+provider = "manual"
+target = "procedural_effect"
+
+[texture]
+enabled = false
+
+[rig]
+enabled = false
+
+[render]
+profile = "effect"
+directions = 8
+layer = "effect_front"
+passes = ["color", "emission", "depth"]
+blend_mode = "add"
+
+[sprite]
+pivot = [256, 256]
+trim = false
+
+[[animations]]
+id = "travel"
+fps = 16
+frames = 12
+loop = true
+
+[[animations]]
+id = "impact"
+fps = 20
+frames = 10
+loop = false
+events = [{ frame = 0, id = "damage" }]

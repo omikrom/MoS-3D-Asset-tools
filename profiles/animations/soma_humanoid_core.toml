@@ -1,0 +1,59 @@
+id = "soma_humanoid_core"
+rig_profile = "soma_humanoid_v1"
+
+[[clips]]
+id = "peaceful_idle"
+source = "library/animations/humanoid/peaceful_idle.glb"
+legacy_slot = 18
+fps = 8
+frames = 8
+loop = true
+
+[[clips]]
+id = "combat_idle_standard"
+source = "library/animations/humanoid/combat_idle_standard.glb"
+legacy_slot = 0
+fps = 8
+frames = 8
+loop = true
+
+[[clips]]
+id = "walk_standard"
+source = "library/animations/humanoid/walk_standard.glb"
+legacy_slot = 4
+fps = 12
+frames = 8
+loop = true
+
+[[clips]]
+id = "run"
+source = "library/animations/humanoid/run.glb"
+legacy_slot = 16
+fps = 14
+frames = 8
+loop = true
+
+[[clips]]
+id = "hit_reaction"
+source = "library/animations/humanoid/hit_reaction.glb"
+legacy_slot = 13
+fps = 12
+frames = 6
+loop = false
+
+[[clips]]
+id = "cast"
+source = "library/animations/humanoid/cast.glb"
+legacy_slot = 14
+fps = 12
+frames = 10
+loop = false
+events = [{ frame = 6, id = "release_magic" }]
+
+[[clips]]
+id = "die"
+source = "library/animations/humanoid/die.glb"
+legacy_slot = 15
+fps = 10
+frames = 12
+loop = false

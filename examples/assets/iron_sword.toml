@@ -1,0 +1,47 @@
+schema_version = 1
+
+[asset]
+id = "iron_sword"
+kind = "weapon"
+display_name = "Iron sword"
+tags = ["human", "weapon", "one_handed_sword"]
+
+[source]
+mode = "image"
+path = "../inputs/iron_sword.png"
+prompt = "Practical medieval fantasy iron arming sword, straight blade, leather grip, isolated orthographic product view"
+
+[geometry]
+provider = "hunyuan3d"
+target = "rigid_prop"
+length_metres = 1.0
+material = "pbr"
+
+[texture]
+enabled = true
+provider = "hunyuan3d"
+resolution = 2048
+
+[rig]
+enabled = false
+
+[attachment]
+rig_profile = "soma_humanoid_v1"
+socket = "weapon_right"
+rig_source = "../../library/rigs/soma_humanoid_v1.glb"
+rotation_degrees = [0.0, 0.0, 0.0]
+offset_metres = [0.0, 0.0, 0.0]
+
+[render]
+profile = "character"
+directions = 8
+layer = "arms_weapon"
+render_on_rig = "soma_humanoid_v1"
+animation_set = "one_handed_sword"
+animation_profile = "soma_humanoid_core"
+passes = ["color", "normal", "depth", "emission", "mask"]
+
+[sprite]
+pivot = [192, 304]
+shared_canvas = "soma_humanoid_v1"
+trim = false

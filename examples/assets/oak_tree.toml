@@ -1,0 +1,37 @@
+schema_version = 1
+
+[asset]
+id = "oak_tree"
+kind = "environment"
+display_name = "Oak tree"
+tags = ["environment", "tree", "temperate"]
+
+[source]
+mode = "image"
+path = "../inputs/oak_tree.png"
+prompt = "Mature broad fantasy oak tree, complete trunk roots and canopy, isolated, no ground plane"
+
+[geometry]
+provider = "hunyuan3d"
+target = "static_prop"
+height_metres = 7.0
+material = "pbr"
+
+[texture]
+enabled = true
+provider = "hunyuan3d"
+resolution = 2048
+
+[rig]
+enabled = false
+
+[render]
+profile = "monster"
+directions = 4
+layer = "environment"
+passes = ["color", "normal", "depth", "mask", "shadow"]
+
+[sprite]
+pivot = [256, 470]
+trim = false
+collision = "trunk"

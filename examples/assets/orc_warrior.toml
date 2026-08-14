@@ -1,0 +1,74 @@
+schema_version = 1
+
+[asset]
+id = "orc_warrior"
+kind = "monster"
+display_name = "Orc warrior"
+tags = ["monster", "humanoid", "hostile"]
+
+[source]
+mode = "image"
+path = "../inputs/orc_warrior_front.png"
+prompt = "Large muscular green fantasy orc warrior in an A-pose, brutal iron and hide armour, complete body, clean background"
+
+[geometry]
+provider = "hunyuan3d"
+target = "deformable_character"
+height_metres = 2.2
+material = "pbr"
+
+[texture]
+enabled = true
+provider = "hunyuan3d"
+resolution = 2048
+
+[rig]
+enabled = true
+provider = "unirig"
+profile = "soma_humanoid_v1"
+
+[render]
+profile = "monster"
+directions = 8
+layer = "body"
+passes = ["color", "normal", "depth", "emission", "mask", "shadow"]
+
+[sprite]
+pivot = [256, 416]
+trim = false
+
+[[animations]]
+id = "idle"
+source = "../../library/animations/humanoid/combat_idle_two_handed.glb"
+fps = 8
+frames = 8
+loop = true
+
+[[animations]]
+id = "walk"
+source = "../../library/animations/humanoid/walk_two_handed.glb"
+fps = 10
+frames = 8
+loop = true
+
+[[animations]]
+id = "attack"
+source = "../../library/animations/humanoid/attack_two_handed.glb"
+fps = 12
+frames = 10
+loop = false
+events = [{ frame = 7, id = "damage" }]
+
+[[animations]]
+id = "hit"
+source = "../../library/animations/humanoid/hit_reaction.glb"
+fps = 12
+frames = 6
+loop = false
+
+[[animations]]
+id = "die"
+source = "../../library/animations/humanoid/die.glb"
+fps = 10
+frames = 12
+loop = false
