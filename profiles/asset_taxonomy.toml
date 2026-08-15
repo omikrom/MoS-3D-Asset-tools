@@ -1,0 +1,39 @@
+schema_version = 1
+
+[characters]
+families = ["human_male", "human_female", "devil_male", "devil_female", "npc_humanoid"]
+layers = ["body", "trousers", "boots", "armour", "helmet", "hair", "arms_weapon", "shield", "shadow"]
+portraits = ["inventory_full", "paper_doll", "head", "dialogue"]
+
+[weapons]
+families = [
+  "unarmed", "one_handed_sword", "two_handed_sword", "dual_sword",
+  "axe", "spear", "bow", "crossbow", "wand", "staff",
+]
+outputs = ["world_sprite", "equipped_layer", "inventory_icon", "ground_drop"]
+
+[equipment]
+slots = ["trousers", "boots", "armour", "helmet", "shield", "back", "accessory"]
+outputs = ["equipped_layer", "inventory_icon", "ground_drop"]
+
+[monsters]
+rig_families = ["humanoid", "quadruped", "winged", "serpentine", "insect", "floating", "bespoke_boss"]
+actions = ["idle", "walk", "run", "attack_primary", "attack_secondary", "cast", "hit", "die", "special"]
+
+[world]
+families = [
+  "building", "wall", "door", "bridge", "tree", "plant", "rock", "ore",
+  "furniture", "container", "sign", "statue", "ruin", "clutter", "water_prop",
+]
+outputs = ["world_sprite", "normal", "depth", "shadow", "collision", "interaction_anchor"]
+
+[effects]
+families = [
+  "cast", "charge", "projectile", "impact", "beam", "aura", "buff", "debuff",
+  "ground_area", "portal", "summon", "heal", "poison", "fire", "ice", "lightning",
+  "blood", "death", "smoke", "dust", "debris", "weather", "ambient",
+]
+outputs = ["colour", "emission", "depth", "mask", "decal"]
+
+[interface]
+families = ["inventory_icon", "skill_icon", "portrait", "cursor", "map_marker", "status_effect"]

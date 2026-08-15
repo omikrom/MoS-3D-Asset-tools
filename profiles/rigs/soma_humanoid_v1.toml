@@ -1,0 +1,22 @@
+id = "soma_humanoid_v1"
+bind_pose = "a_pose"
+root_bone = "root"
+hips_bone = "hips"
+scale_metres = 1.8
+
+[sockets]
+weapon_right = "hand_r"
+weapon_left = "hand_l"
+shield = "forearm_l"
+back = "spine_03"
+head = "head"
+projectile = "hand_r"
+
+[required_bones]
+body = [
+  "root", "hips", "spine_01", "spine_02", "spine_03", "neck", "head",
+  "clavicle_l", "upperarm_l", "lowerarm_l", "hand_l",
+  "clavicle_r", "upperarm_r", "lowerarm_r", "hand_r",
+  "thigh_l", "calf_l", "foot_l", "toe_l",
+  "thigh_r", "calf_r", "foot_r", "toe_r",
+]

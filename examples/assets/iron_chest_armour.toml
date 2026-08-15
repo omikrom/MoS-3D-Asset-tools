@@ -1,0 +1,42 @@
+schema_version = 1
+
+[asset]
+id = "iron_chest_armour"
+kind = "armour"
+display_name = "Iron chest armour"
+tags = ["human", "armour", "chest"]
+
+[source]
+mode = "image"
+path = "../inputs/iron_chest_armour.png"
+prompt = "Functional dark iron fantasy breastplate and shoulder armour on an invisible A-pose mannequin"
+
+[geometry]
+provider = "hunyuan3d"
+target = "skinned_equipment"
+material = "pbr"
+
+[texture]
+enabled = true
+provider = "hunyuan3d"
+resolution = 2048
+
+[rig]
+enabled = true
+provider = "blender_weight_transfer"
+profile = "soma_humanoid_v1"
+transfer_weights_from = "human_male"
+
+[render]
+profile = "character"
+directions = 8
+layer = "armour"
+render_on_rig = "soma_humanoid_v1"
+animation_profile = "soma_humanoid_core"
+passes = ["color", "normal", "depth", "emission", "mask"]
+
+[sprite]
+pivot = [192, 304]
+shared_canvas = "soma_humanoid_v1"
+trim = false
+occludes = ["body", "trousers"]

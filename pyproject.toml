@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mos-asset-factory"
+version = "0.1.0"
+description = "A model-agnostic 3D-to-sprite asset factory for Myth of Soma"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["Pillow>=10.0"]
+
+[project.scripts]
+mos = "mos_asset_factory.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mos_asset_factory = ["py.typed"]

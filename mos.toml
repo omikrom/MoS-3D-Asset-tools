@@ -1,0 +1,58 @@
+schema_version = 1
+
+[project]
+workspace = "workspace"
+profiles = "profiles"
+blender_scripts = "tools/blender"
+model_registry = "models.toml"
+
+[pipeline]
+stages = ["source", "shape", "texture", "prepare", "rig", "animate", "render", "pack", "export"]
+continue_on_manual = false
+
+[tools.blender]
+enabled = false
+executable = "${BLENDER_EXE:-blender}"
+
+# Providers are disabled until their model repositories and environments are
+# installed. A command provider receives a request JSON and must write the
+# declared output. Placeholders are expanded by the factory.
+[providers.shape.hunyuan3d]
+kind = "command"
+enabled = false
+command = ["${HUNYUAN_PYTHON:-python}", "tools/providers/hunyuan3d_adapter.py", "--request", "{request}"]
+
+[providers.shape.trellis]
+kind = "command"
+enabled = false
+command = ["${TRELLIS_PYTHON:-python}", "tools/providers/trellis_adapter.py", "--request", "{request}"]
+
+[providers.texture.hunyuan3d]
+kind = "command"
+enabled = false
+command = ["${HUNYUAN_PYTHON:-python}", "tools/providers/hunyuan3d_adapter.py", "--request", "{request}"]
+
+[providers.texture.passthrough]
+kind = "passthrough"
+enabled = true
+
+[providers.texture.manual]
+kind = "manual"
+enabled = true
+
+[providers.rig.unirig]
+kind = "command"
+enabled = false
+command = ["${UNIRIG_PYTHON:-python}", "tools/providers/unirig_adapter.py", "--request", "{request}"]
+
+[providers.shape.manual]
+kind = "manual"
+enabled = true
+
+[providers.rig.manual]
+kind = "manual"
+enabled = true
+
+[providers.animation.pre_rigged]
+kind = "passthrough"
+enabled = true

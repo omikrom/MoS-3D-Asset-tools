@@ -1,0 +1,19 @@
+[composition]
+id = "human_iron_sword"
+rig_profile = "soma_humanoid_v1"
+profile = "soma_legacy"
+
+[layers]
+body = "human_male"
+armour = "iron_chest_armour"
+arms_weapon = "iron_sword"
+
+[draw_order]
+south = ["body", "armour", "arms_weapon"]
+south_west = ["body", "arms_weapon", "armour"]
+west = ["body", "arms_weapon", "armour"]
+north_west = ["body", "arms_weapon", "armour"]
+north = ["arms_weapon", "body", "armour"]
+north_east = ["body", "armour", "arms_weapon"]
+east = ["body", "armour", "arms_weapon"]
+south_east = ["body", "armour", "arms_weapon"]

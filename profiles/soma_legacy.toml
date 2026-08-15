@@ -1,0 +1,110 @@
+schema_version = 1
+id = "soma_legacy"
+description = "Compatibility profile recovered from the original Soma client source"
+
+directions = [
+  "south", "south_west", "west", "north_west",
+  "north", "north_east", "east", "south_east",
+]
+
+layers = ["shadow", "body", "trousers", "boots", "armour", "helmet", "arms_weapon", "shield"]
+
+[[actions]]
+slot = 0
+id = "combat_idle_standard"
+
+[[actions]]
+slot = 1
+id = "combat_idle_two_handed"
+
+[[actions]]
+slot = 2
+id = "combat_idle_polearm"
+
+[[actions]]
+slot = 3
+id = "crossbow_action"
+
+[[actions]]
+slot = 4
+id = "walk_standard"
+
+[[actions]]
+slot = 5
+id = "walk_two_handed"
+
+[[actions]]
+slot = 6
+id = "walk_polearm"
+
+[[actions]]
+slot = 7
+id = "attack_unarmed"
+
+[[actions]]
+slot = 8
+id = "attack_one_handed_or_wand"
+
+[[actions]]
+slot = 9
+id = "attack_two_handed"
+
+[[actions]]
+slot = 10
+id = "attack_spear"
+
+[[actions]]
+slot = 11
+id = "attack_bow"
+
+[[actions]]
+slot = 12
+id = "attack_axe"
+
+[[actions]]
+slot = 13
+id = "hit_reaction"
+
+[[actions]]
+slot = 14
+id = "cast"
+
+[[actions]]
+slot = 15
+id = "die"
+
+[[actions]]
+slot = 16
+id = "run"
+
+[[actions]]
+slot = 17
+id = "attack_dual_sword"
+
+[[actions]]
+slot = 18
+id = "peaceful_idle"
+
+[weapon_types]
+unarmed = 0
+one_handed_sword = 1
+two_handed_sword = 2
+spear = 3
+bow = 4
+axe = 5
+wand = 6
+crossbow = 7
+dual_sword = 8
+
+# The old client changed whole-layer order by direction. The modern exporter
+# stores this as metadata; Godot can reproduce it or use generated front/back
+# masks for finer intersections.
+[draw_order]
+south = ["shadow", "body", "trousers", "boots", "armour", "helmet", "shield", "arms_weapon"]
+south_west = ["shadow", "body", "trousers", "arms_weapon", "boots", "armour", "helmet", "shield"]
+west = ["shadow", "body", "trousers", "arms_weapon", "boots", "armour", "helmet", "shield"]
+north_west = ["shadow", "body", "trousers", "arms_weapon", "boots", "armour", "helmet", "shield"]
+north = ["shadow", "shield", "body", "trousers", "boots", "armour", "arms_weapon", "helmet"]
+north_east = ["shadow", "body", "trousers", "boots", "armour", "helmet", "arms_weapon", "shield"]
+east = ["shadow", "body", "trousers", "boots", "armour", "helmet", "arms_weapon", "shield"]
+south_east = ["shadow", "body", "trousers", "boots", "armour", "helmet", "arms_weapon", "shield"]
